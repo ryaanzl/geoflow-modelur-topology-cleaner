@@ -100,10 +100,10 @@ python main.py
 
 ### 4. Processing finished:
 When processing is complete, the pipeline prints a final confirmation message with colors applied in the terminal:
-```
+```python
 Total matching geojson with 'RO': 3 Grid
 Processing RO files: AK_16_C |████████████████████████████████████████| 3/3 [100%] in 8.1s (0.29/s)
-``` 
+```
 ### 5. Results will be saved automatically in dated output folders:
 ````
 OUTPUT_YYYY_MM_DD/
