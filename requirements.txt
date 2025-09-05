@@ -1,0 +1,6 @@
+geopandas>=0.14
+shapely>=2.0
+pyogrio>=0.7
+fiona>=1.9
+alive-progress>=3.1
+colorama>=0.4
