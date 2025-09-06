@@ -7,6 +7,8 @@ Contact: ryanzulqifli@gmail.com
 
 import os
 import re
+import time
+import random
 import warnings
 from datetime import datetime
 
@@ -32,7 +34,7 @@ steelblue = "\033[38;5;67m"
 reset = "\033[0m"
 
 # User configuration
-baseDir = r"C:\3D_RYAN\03 PROJECT\02 TOPOLOGI\MOLK\2025_09_04\tes"
+baseDir = r"C:\3D_RYAN\03 PROJECT\02 TOPOLOGI\HAMMEK\2025_09_02\DATA\AQ-13-B"
 folderData = "DATA"
 processMode = "ro"  # Options: "ro", "bo", "kanopi"
 
@@ -94,13 +96,22 @@ if __name__ == "__main__":
             )
 
             try:
+                # Step 1: Read file
                 gdf = gpd.read_file(inputPath)
+                time.sleep(random.uniform(1, 2))  # simulate read delay
+
+                # Step 2: Clean geodata
                 gdfClean = cleanGeodata(gdf)
+                time.sleep(random.uniform(1, 2))  # simulate cleaning delay
+
+                # Step 3: Export outputs
                 saveOutputs(
                     gdfClean, inputPath, fileName,
                     geoflowDir, modelurDir,
                     geoflowCrs, modelurCrs
                 )
+                time.sleep(random.uniform(1, 2))  # simulate export delay
+
             except Exception as e:
                 bar.text(f"{peru}Failed {inputPath}{reset} | Error: {e}")
 
