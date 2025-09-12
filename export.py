@@ -29,6 +29,6 @@ def saveOutputs(gdf: gpd.GeoDataFrame, inputPath: str, fileName: str,
 
     # Export Modelur with holes handled
     gdfModelur = gdf.to_crs(epsg=modelurCrs).copy()
-    gdfModelur["geometry"] = gdfModelur["geometry"].apply(explodeHoles)
-    gdfModelur = gdfModelur.explode(index_parts=False).reset_index(drop=True)
+    # gdfModelur["geometry"] = gdfModelur["geometry"].apply(explodeHoles)
+    # gdfModelur = gdfModelur.explode(index_parts=False).reset_index(drop=True)
     gdfModelur.to_file(pathModelur, driver="GeoJSON")
